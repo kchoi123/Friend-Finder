@@ -32,7 +32,7 @@
         <hr>
 
         <h3><strong>Question 1</strong></h3>
-        <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+        <h4>Your dogs mind is always buzzing with unexplored ideas and plans.</h4>
         <select class="chosen-select" id="q1">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -43,7 +43,7 @@
         </select>
 
         <h3><strong>Question 2</strong></h3>
-        <h4>Generally speaking, you rely more on your experience than your imagination.</h4>
+        <h4>Generally speaking, your dog rely more on your experience than your imagination.</h4>
         <select class="chosen-select" id="q2">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -55,7 +55,7 @@
 
 
         <h3><strong>Question 3</strong></h3>
-        <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+        <h4>Your dog find it easy to stay relaxed and focused even when there is some pressure.</h4>
         <select class="chosen-select" id="q3">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -67,7 +67,7 @@
 
 
         <h3><strong>Question 4</strong></h3>
-        <h4>You rarely do something just out of sheer curiosity.</h4>
+        <h4>Your dog rarely do something just out of sheer curiosity.</h4>
         <select class="chosen-select" id="q4">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -79,7 +79,7 @@
 
 
         <h3><strong>Question 5</strong></h3>
-        <h4>People can rarely upset you.</h4>
+        <h4>People can rarely upset your dog.</h4>
         <select class="chosen-select" id="q5">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -91,7 +91,7 @@
 
 
         <h3><strong>Question 6</strong></h3>
-        <h4>It is often difficult for you to relate to other people’s feelings.</h4>
+        <h4>It is often difficult for your dog to relate to other people’s feelings.</h4>
         <select class="chosen-select" id="q6">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -103,7 +103,7 @@
 
 
         <h3><strong>Question 7</strong></h3>
-        <h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
+        <h4>In a discussion, your dog truth should be more important than people’s sensitivities.</h4>
         <select class="chosen-select" id="q7">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -114,7 +114,7 @@
         </select>
 
         <h3><strong>Question 8</strong></h3>
-        <h4>You rarely get carried away by fantasies and ideas.</h4>
+        <h4>Your dog rarely get carried away by fantasies and ideas.</h4>
         <select class="chosen-select" id="q8">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -125,7 +125,7 @@
         </select>
 
         <h3><strong>Question 9</strong></h3>
-        <h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or
+        <h4>Your dog think that everyone’s views should be respected regardless of whether they are supported by facts or
             not.</h4>
         <select class="chosen-select" id="q9">
             <option value=""></option>
@@ -137,7 +137,7 @@
         </select>
 
         <h3><strong>Question 10</strong></h3>
-        <h4>You feel more energetic after spending time with a group of people.</h4>
+        <h4>Your dog feel more energetic after spending time with a group of people.</h4>
         <select class="chosen-select" id="q10">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -168,6 +168,19 @@
 
     </div>
 
+    <!-- Modal found in W3-->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1 style="text-align:center">Your dog's new friend is: </h1>
+            <p id="modal-name" style="text-align:center">name</p>
+            <img id="modal-image" width="500" highet="500" style="display:block; margin-left:auto; margin-right:auto; width:50%" src""/>
+        </div>
+
+    </div>
+
     <!-- Bootstraps -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -181,55 +194,106 @@
 
     <!-- Jquery -->
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    
+
     <!-- survey javascript -->
     <script>
+        // Get the modal
+        var modal = document.getElementById('myModal');
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        $("#submit").on("click", function (event) {
+            // When the user clicks the submit button, open the modal 
+            modal.style.display = "block";
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
+
         // on click function for submit button
         $("#submit").on("click", function (event) {
             event.preventDefault();
 
-            // Here we grab the form elements
-            var newSubject = {
-                name: $("#name").val(),
-                photo: $("#photo").val(),
-                scores: [
-                    $("#q1").val(),
-                    $("#q2").val(),
-                    $("#q3").val(),
-                    $("#q4").val(),
-                    $("#q5").val(),
-                    $("#q6").val(),
-                    $("#q7").val(),
-                    $("#q8").val(),
-                    $("#q9").val(),
-                    $("#q10").val(),
-                ]
-            };
+            // form validation
+            function validEntry() {
+                var valid = true;
+                $(".form-control").each(function () {
+                    if ($(this).val() === "") {
+                        valid = false;
+                    }
+                });
 
-            // Test
-            console.log(newSubject);
+                $(".chosen-select").each(function () {
+                    if ($(this).val() === "") {
+                        valid = false;
+                    }
+                });
+                console.log(valid);
+                return valid;
+            }
 
-            $.post("/api/friends", newSubject, function (data) {
+            if (validEntry()) {
+                // Here we grab the form elements
+                var newSubject = {
+                    name: $("#name").val(),
+                    photo: $("#photo").val(),
+                    scores: [
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                        $("#q7").val(),
+                        $("#q8").val(),
+                        $("#q9").val(),
+                        $("#q10").val(),
+                    ]
+                };
 
-                console.log(data + "it worked!");
+                // Test
+                console.log(newSubject);
 
-                // Clear the form when submitting
-                $("#name").val("");
-                $("#photo").val("");
-                $("#q1").val("");
-                $("#q2").val("");
-                $("#q3").val("");
-                $("#q4").val("");
-                $("#q5").val("");
-                $("#q6").val("");
-                $("#q7").val("");
-                $("#q8").val("");
-                $("#q9").val("");
-                $("#q10").val("");
+                $.post("/api/friends", newSubject, function (data) {
 
-            });
+                    console.log(data + "it worked!");
 
+                    // Clear the form when submitting
+                    $("#name").val("");
+                    $("#photo").val("");
+                    $("#q1").val("");
+                    $("#q2").val("");
+                    $("#q3").val("");
+                    $("#q4").val("");
+                    $("#q5").val("");
+                    $("#q6").val("");
+                    $("#q7").val("");
+                    $("#q8").val("");
+                    $("#q9").val("");
+                    $("#q10").val("");
+
+                    // Set the name and image values of friend match
+                    $('#modal-name').html(data.name);
+                    console.log(data.photo);
+                    $("#modal-image").attr("src", data.photo);
+
+                });
+            } else {
+                alert("Entry is not valid. Please answer all fiels correctly!");
+            }
         });
+
+
     </script>
 
 </body>

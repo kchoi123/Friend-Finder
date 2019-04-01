@@ -1,38 +1,38 @@
 var subjects = [{
-        name: "Steph",
+        name: "Roockie",
         photo: "https://images.tmz.com/2017/03/27/0327-murphy-doodles-3.jpg",
         scores: [
-            "5",
             "1",
-            "4",
+            "2",
+            "3",
             "4",
             "5",
             "1",
             "2",
-            "5",
+            "3",
             "4",
-            "1"
+            "5"
         ]
     },
     {
         name: "POLO",
-        photo: "https://www.instagram.com/p/Bswp3WrgtqW/?utm_source=ig_web_options_share_sheet",
+        photo: "https://i.pinimg.com/originals/00/32/25/003225b0b077cb7d0b1ce58b56f2ac51.jpg",
         scores: [
             "5",
-            "1",
             "4",
-            "4",
-            "5",
-            "1",
+            "3",
             "2",
+            "1",
             "5",
             "4",
+            "3",
+            "2",
             "1"
         ]
     },
     {
         name: "Mocha",
-        photo: "https://www.instagram.com/p/BcxndqInsAZ/?utm_source=ig_web_options_share_sheet",
+        photo: "https://dgicdplf3pvka.cloudfront.net/919290/shiba-inu-puppy-picture-6523488e-334e-4d70-8ed5-31315fe7a876.jpg",
         scores: [
             "5",
             "1",
@@ -48,18 +48,18 @@ var subjects = [{
     },
     {
         name: "Nacho",
-        photo: "https://www.instagram.com/p/BouQInjHZbN/?utm_source=ig_web_options_share_sheet",
+        photo: "https://i.pinimg.com/originals/74/61/9a/74619a768fee5145eb6f2aa8be762e2d.jpg",
         scores: [
             "5",
-            "1",
-            "4",
-            "4",
-            "5",
-            "1",
             "2",
-            "5",
+            "3",
             "4",
-            "1"
+            "5",
+            "2",
+            "2",
+            "4",
+            "4",
+            "2"
         ]
     }
 ];
