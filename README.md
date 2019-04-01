@@ -1,4 +1,4 @@
 # Friend-Finder
 
-- http://kchoi.co/Friend-Finder/
+- https://dogfriendfinderapp.herokuapp.com/
 
