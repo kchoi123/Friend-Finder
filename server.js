@@ -10,6 +10,7 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Makes public folder static to be used on the web
 // app.use(express.static('/app/public'));
 app.use(express.static(path.join(__dirname, '/app/public/')));
 
