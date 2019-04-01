@@ -3,12 +3,12 @@ var subjects = require("../data/friends");
 
 module.exports = function (app) {
   // Displays all subjects
-  app.get("/api/subjects", function (req, res) {
+  app.get("/api/friends", function (req, res) {
     return res.json(subjects);
   });
 
   // Displays a single subject, or returns false
-  app.get("/api/subjects/:subject", function (req, res) {
+  app.get("/api/friends/:subject", function (req, res) {
     var chosen = req.params.subject;
 
     console.log(chosen);
@@ -23,7 +23,7 @@ module.exports = function (app) {
   });
 
   // Create New Subjects - takes in JSON input
-  app.post("/api/subjects", function (req, res) {
+  app.post("/api/friends", function (req, res) {
     // req.body hosts is equal to the JSON post sent from the user
     // This works because of our body parsing middleware
     var newsubject = req.body;
@@ -38,4 +38,4 @@ module.exports = function (app) {
 
     res.json(newsubject);
   });
-}
+};
