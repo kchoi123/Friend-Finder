@@ -1,9 +1,17 @@
-Starting the home page "/" or index.html
-app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, 'app', 'public', "home.html"));
-});
+// Dependencies
+var path = require("path");
 
-Enter survey
-app.get("/survey", function(req, res) {
-    res.sendFile(path.join(__dirname, 'app', 'public', "survey.html"));
-  });
+// Routing
+module.exports = function (app) {
+
+    // Home Page
+    app.get("/tables", function (req, res) {
+        res.sendFile(path.join(__dirname, "../public/home.html"));
+    });
+
+    // Enter survey
+    app.get("/reserve", function (req, res) {
+        res.sendFile(path.join(__dirname, "../public/survey.html"));
+    });
+
+}
