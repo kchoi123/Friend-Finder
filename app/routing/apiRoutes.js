@@ -1,4 +1,4 @@
-s// Load Data
+// Load Data
 var subjects = require("../data/friends");
 
 module.exports = function (app) {
