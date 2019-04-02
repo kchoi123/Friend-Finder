@@ -7,20 +7,30 @@
 - Bootstrap
 - Font Awesome!
 
-Start page
-![start_screen](/images/1.png)
+Start page<br>
+<img src="./images/1.png" alt="start_page" width="200">
 
-First part of questions
-![first_questions](/images/2.png)
+<hr>
 
-Second part of questions
-![second_half_questions](/images/3.png)
+First part of questions<br>
+<img src="./images/2.png" alt="first_questions" width="200">
 
-Result example 1
-![result1](/images/4.png)
+<hr>
 
-Result example 2
-![result2](/images/5.png)
+Second part of questions<br>
+<img src="./images/3.png" alt="second_half_questions" width="200">
 
-JSON Result
-![json_result](/images/6.png)
+<hr>
+
+Result example 1<br>
+<img src="./images/4.png" alt="result1" width="200">
+
+<hr>
+
+Result example 2<br>
+<img src="./images/5.png" alt="result2" width="200">
+
+<hr>
+
+JSON Result<br>
+<img src="./images/6.png" alt="json_results" width="200">
